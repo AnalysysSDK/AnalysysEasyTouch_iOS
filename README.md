@@ -51,7 +51,11 @@ AnalysysEaConfig.h
 
 #### 注意事项
 
-**集成易达 SDK 前，需要先集成：**[**方舟 SDK 易达专用版**](https://github.com/analysys-ea/UBASDK)**，方舟 SDK 易达专用版为易达与方舟数据对接专属定制版，方舟 SDK 参考文档：**[**方舟 SDK 文档**](https://docs.analysys.cn/ark/integration/sdk/ios)
+集成易达 SDK 前，需要先集成埋点与数据采集 SDK，方舟易达目前支持：
+
+* [**方舟 SDK**](https://github.com/analysys/ans-ios-sdk/releases)**，方舟 SDK 参考文档：**[**方舟 SDK 文档**](https://docs.analysys.cn/ark/integration/sdk/ios)
+
+* 神策 SDK，若要使用神策 SDK，请联系开发人员提供神策 SDK 易达专用版
 
 ### 二、快速开始
 
@@ -87,7 +91,7 @@ pod 'AnalysysEasyTouch', '1.1.4' // 示例版本号
 
 #### 3、添加头文件
 
-* 1在 AppDelegate.m 中引入以下头文件：
+* 在 AppDelegate.m 中引入以下头文件：
 
 ```
 #import <AnalysysEasyTouch/AnalysysEaManager.h> // 易达 SDK
@@ -385,6 +389,40 @@ userId：1BCAF1D0-C8C0-46A8-866F-005832024259
 **注意事项**
 
 注册的 token 需是经过解析后的。
+该方法在 1.1.5 版本后由 registerDeviceToken:sourceType: 接口代替，可通过 sourceType 参数传入数据源，不带 sourceType 参数则默认使用方舟作为数据源。
+
+#### 注册推送 deviceToken（带 SourceType 类型参数）
+
+**支持的版本**
+
+1.1.5 及以上版本。
+
+**接口说明**
+
+注册 APP 启动后由系统返回的 deviceToken。
+
+**接口定义**
+
+```
++ (void)registerDeviceToken:(NSString *)deviceToken sourceType:(SourceType)sourceType;
+```
+
+**参数说明**
+
+* deviceToken
+
+* app 启动后由系统返回的用于推送的 deviceToken。
+* sourceType
+
+* 数据采集源，SourceType 枚举类型参数。
+
+**接口返回**
+
+无
+
+**注意事项**
+
+注册的 token 需是经过解析后的。
 
 #### 追踪推送消息
 
@@ -515,17 +553,17 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 解决方式一：在命令行执行以下命令直接删除（缺点是模拟器将不能被支持）
 
 ```
-1.使用终端进入到SDK内部
+1.使用终端进入到 SDK 内部
 cd /Users/xxx/xxx/xxx/AnalysysEasyTouch.framework
 
 2.查看当前支持的架构
 lipo -info AnalysysEasyTouch
-可以看到AnalysysEasyTouch当前支持的架构：
-Architectures in the fat file: AnalysysEasyTouch are: i386 x86\_64 armv7 arm64
+可以看到 AnalysysEasyTouch 当前支持的架构：
+Architectures in the fat file: AnalysysEasyTouch are: i386 x86_64 armv7 arm64
 
-3.删掉i386，x86\_86架构
+3.删掉 i386（模拟器 32 位），x86_64（模拟器 64 位） 架构
 lipo -remove i386 AnalysysEasyTouch -o AnalysysEasyTouch
-lipo -remove x86\_64 AnalysysEasyTouch -o AnalysysEasyTouch
+lipo -remove x86_64 AnalysysEasyTouch -o AnalysysEasyTouch
 ```
 
 解决方式二：Target -&gt; Build Phases -&gt; Add Run Script，添加以下脚本，并勾选 Run script only when installing（该选项意思是在 Archive 打包时才会执行脚本）
