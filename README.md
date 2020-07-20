@@ -373,48 +373,14 @@ userId：1BCAF1D0-C8C0-46A8-866F-005832024259
 **接口定义**
 
 ```
-+ (void)registerDeviceToken:(NSString *)deviceToken;
++ (void)pushToken:(NSData *)deviceToken;
 ```
 
 **参数说明**
 
 * deviceToken
 
-* app 启动后由系统返回的用于推送的 deviceToken。
-
-**接口返回**
-
-无
-
-**注意事项**
-
-注册的 token 需是经过解析后的。
-该方法在 1.1.5 版本后由 registerDeviceToken:sourceType: 接口代替，可通过 sourceType 参数传入数据源，不带 sourceType 参数则默认使用方舟作为数据源。
-
-#### 注册推送 deviceToken（带 SourceType 类型参数）
-
-**支持的版本**
-
-1.1.5 及以上版本。
-
-**接口说明**
-
-注册 APP 启动后由系统返回的 deviceToken。
-
-**接口定义**
-
-```
-+ (void)registerDeviceToken:(NSString *)deviceToken sourceType:(SourceType)sourceType;
-```
-
-**参数说明**
-
-* deviceToken
-
-* app 启动后由系统返回的用于推送的 deviceToken。
-* sourceType
-
-* 数据采集源，SourceType 枚举类型参数。
+* app 启动后由系统返回的用于推送的 NSData 类型的 deviceToken。
 
 **接口返回**
 

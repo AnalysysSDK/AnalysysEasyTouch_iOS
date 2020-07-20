@@ -32,13 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)registerForRemoteNotificationWithDelegate:(id)delegate;
 
 /// 注册远程推送获取的 deviceToken
-/// @param deviceToken APNS 远程推送由系统返回的 deviceToken
-+ (void)registerDeviceToken:(NSString *)deviceToken __attribute__((deprecated("已过时！建议使用 registerDeviceToken:sourceType: 接口")));
-
-/// 注册远程推送获取的 deviceToken
-/// @param deviceToken APNS 远程推送由系统返回的 deviceToken
-/// @param sourceType 采集数据来源，SourceType 枚举类型
-+ (void)registerDeviceToken:(NSString *)deviceToken sourceType:(SourceType)sourceType;
+/// @param deviceToken APNS 远程推送由系统返回的 NSData 类型的 deviceToken
++ (void)pushToken:(NSData *_Nullable)deviceToken;
 
 /// 追踪推送消息
 /// @param type 推送消息事件类型，到达/点击
