@@ -2,7 +2,7 @@
 
 * iOS 常见问题
 
-* iOS 客户端 SDK 下载：[AnalysysEasyTouch](https://github.com/analysys-ea/EASDK)
+* iOS 客户端 SDK 下载：[AnalysysEasyTouch](https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS/releases)
 
 ---
 
@@ -76,14 +76,14 @@ pod 'AnalysysEasyTouch' // 易达 SDK
 * 如果需要安装指定版本，则按照以下方式
 
 ```
-pod 'AnalysysEasyTouch', '1.1.4' // 示例版本号
+pod 'AnalysysEasyTouch', '1.1.5.3' // 示例版本号
 ```
 
 * 特别注意：由于iOS 10以后苹果系统增加的 NSNotification Service Extension 扩展能够用于统计推送到达率，如果在 APP 中添加了该扩展而无法引入第三方的类文件，则需要使用以下“选择2”方式手动下载静态库并导入项目。将静态库及相关头文件添加到项目中的时候，需要同时勾选项目主 target 和 NSNotification Service Extension 扩展target，否则编译会报错。
 
 **方式 2：手动下载动态库导入**
 
-* [下载最新动态库 SDK](https://github.com/analysys-ea/EASDK)
+* [下载最新动态库 SDK](https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS/releases)
 
 * 解压缩后，拷贝 AnalysysEasyTouch.framework 文件到项目中
 
@@ -128,17 +128,9 @@ config.applicationGroupIdentifier = @"App 创建的 App Groups ID";
 [AnalysysEasyTouch registerRemoteNotificationWithDelegate:self];
 ```
 
-* 在成功注册推送并收到 deviceToken 的系统回调方法 - \(void\)application:\(UIApplication \*\)application didRegisterForRemoteNotificationsWithDeviceToken:\(NSData \*\)deviceToken 中上报解析后的 deviceToken
+* 在成功注册推送并收到 deviceToken 的系统回调方法 - \(void\)application:\(UIApplication \*\)application didRegisterForRemoteNotificationsWithDeviceToken:\(NSData \*\)deviceToken 中上报 deviceToken
 
 ```
-// iOS 13 之后的新的转换方法，兼容之前的版本
-const unsigned *tokenBytes = [deviceToken bytes];
-NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
-ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
-ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
-ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-NSLog(@"\n>>>[DeviceToken Success]:%@\n\n", hexToken);
-
 // 上报pushId（解析后的deviceToken）
 // 目前易达 iOS SDK 只支持苹果 APNS 推送通道
 [AnalysysEaManager registerDeviceToken:hexToken];
@@ -364,11 +356,11 @@ userId：1BCAF1D0-C8C0-46A8-866F-005832024259
 
 **支持的版本**
 
-1.0.9 及以上版本。
+1.1.5.3 及以上版本。
 
 **接口说明**
 
-注册 APP 启动后由系统返回的 deviceToken。
+注册 APP 启动后由系统返回的 NSData 类型的 deviceToken。
 
 **接口定义**
 
@@ -388,7 +380,7 @@ userId：1BCAF1D0-C8C0-46A8-866F-005832024259
 
 **注意事项**
 
-注册的 token 需是经过解析后的。
+直接传系统回调的 deviceToken ，无需解析。
 
 #### 追踪推送消息
 
