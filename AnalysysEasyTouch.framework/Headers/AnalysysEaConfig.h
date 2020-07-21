@@ -34,12 +34,6 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
     PUSH_CLICK    // 点击推送消息
 };
 
-/// 采集数据来源
-typedef NS_ENUM(NSInteger, SourceType) {
-    SOURCE_ANALYSYS,           // 方舟
-    SOURCE_SENSORS_ANALYTICS,  // 神策
-};
-
 /// SDK 初始化配置类
 @interface AnalysysEaConfig : NSObject
 
