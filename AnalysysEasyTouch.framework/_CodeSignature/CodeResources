@@ -56,18 +56,6 @@
 		<data>
 		wsD2afbPAaPb3smUSe4sksgLLsk=
 		</data>
-		<key>Frameworks/EAKit.framework/EAKit</key>
-		<data>
-		4dM4ywkDyLVKPh/XW2LT1sDJbms=
-		</data>
-		<key>Frameworks/EAKit.framework/Info.plist</key>
-		<data>
-		z1ngqBOvnk8FmmmD8hN+SDzvPpw=
-		</data>
-		<key>Frameworks/EAKit.framework/_CodeSignature/CodeResources</key>
-		<data>
-		XFh3CceDaJk7ZuX7MQOPFLhFg8M=
-		</data>
 		<key>Headers/AnalysysEaConfig.h</key>
 		<data>
 		072/QD1yJrZLNgRYnkNNaNtFzDs=
@@ -224,39 +212,6 @@
 			<key>hash2</key>
 			<data>
 			/7AW+XEr5Ezh2g5n2CWwo70QuYn/9F9A0Roqt3y4Td4=
-			</data>
-		</dict>
-		<key>Frameworks/EAKit.framework/EAKit</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4dM4ywkDyLVKPh/XW2LT1sDJbms=
-			</data>
-			<key>hash2</key>
-			<data>
-			pbrBgbtBFhTfK9gGB0i+CzM55XmFhbNc7w18avgW3ZM=
-			</data>
-		</dict>
-		<key>Frameworks/EAKit.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			z1ngqBOvnk8FmmmD8hN+SDzvPpw=
-			</data>
-			<key>hash2</key>
-			<data>
-			hiZxdVnJjkiLRw5P4v0vW8VbHV4gLvjrEUdt/Svw44E=
-			</data>
-		</dict>
-		<key>Frameworks/EAKit.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XFh3CceDaJk7ZuX7MQOPFLhFg8M=
-			</data>
-			<key>hash2</key>
-			<data>
-			xUT3bCRLwXfGzsFwePZxCeeIXrQj8IJQ0sPFBbJ7JE0=
 			</data>
 		</dict>
 		<key>Headers/AnalysysEaConfig.h</key>
