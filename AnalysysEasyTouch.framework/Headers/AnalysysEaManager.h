@@ -33,7 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 注册远程推送获取的 deviceToken
 /// @param deviceToken APNS 远程推送由系统返回的 NSData 类型的 deviceToken
-+ (void)pushToken:(NSData *_Nullable)deviceToken;
+/// @param groupIdentifier App Groups Id
++ (void)pushToken:(NSData *_Nullable)deviceToken groupIdentifier:(NSString *)groupIdentifier;
 
 /// 追踪推送消息
 /// @param type 推送消息事件类型，到达/点击
