@@ -44,6 +44,9 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 @property (nonatomic, copy) NSString *appKey;
 /// app 创建的 App Groups ID，必填
 @property (nonatomic, copy) NSString *applicationGroupIdentifier;
+/// 监听远程推送系统回调方法的代理类，必填
+/// 如在 AppDelegate 中调用 startWithConfig: 方法并监听推送回调，则传入 self
+@property (nonatomic, strong) id notificationCenterDelegate;
 /// SDK 运行环境，默认为线上环境，非必填
 @property (nonatomic, assign) EnvType envType;
 /// 指定输出日志类型，非必填
@@ -51,6 +54,8 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 /// APP 首页视图控制器名称（XXXController），非必填，设置后，创建的基于启动弹窗将会在该首页展示；
 /// 若不设置，创建的基于启动弹窗将可能在 APP 出现的第一个页面上展示（如广告页）
 @property (nonatomic, copy) NSString *mainPage;
+/// 推送功能关闭，非必填，默认 NO，设置为 YES 后系统将不会收到推送消息
+@property (nonatomic, assign) BOOL pushClosed;
 
 @end
 
