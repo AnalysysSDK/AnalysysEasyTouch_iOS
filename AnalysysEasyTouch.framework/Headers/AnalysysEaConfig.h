@@ -56,6 +56,8 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 @property (nonatomic, copy) NSString *mainPage;
 /// 推送功能关闭，非必填，默认 NO，设置为 YES 后系统将不会收到推送消息
 @property (nonatomic, assign) BOOL pushClosed;
+/// 配置 SDK 请求的 URL，非必填，默认为 EA 的 服务器 URL
+@property (nonatomic, copy) NSString *url;
 
 @end
 
