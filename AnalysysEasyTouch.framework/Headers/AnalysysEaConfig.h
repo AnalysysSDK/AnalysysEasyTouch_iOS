@@ -54,7 +54,8 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 /// APP 首页视图控制器名称（XXXController），非必填，设置后，创建的基于启动弹窗将会在该首页展示；
 /// 若不设置，创建的基于启动弹窗将可能在 APP 出现的第一个页面上展示（如广告页）
 @property (nonatomic, copy) NSString *mainPage;
-/// 推送功能关闭，非必填，默认 NO，设置为 YES 后系统将不会收到推送消息
+/// 关闭注册远程推送，非必填，默认 NO
+/// 设置为 YES 后系统将不会注册远程推送消息，但调用 pushToken 接口依然能正常上报 deviceToken
 @property (nonatomic, assign) BOOL pushClosed;
 /// 配置 SDK 请求的 URL，非必填，默认为 EA 的 服务器 URL
 @property (nonatomic, copy) NSString *url;
