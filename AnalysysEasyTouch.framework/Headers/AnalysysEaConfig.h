@@ -37,26 +37,36 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 /// SDK 初始化配置类
 @interface AnalysysEaConfig : NSObject
 
-/// 获取 AnalysysEaConfig 对象唯一实例，建议使用此单例方法
+/// 获取 AnalysysEaConfig 对象唯一实例
 + (instancetype)defaultConfig;
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 /// 初始化时传入的 appKey ，由创建项目时自动生成，必填
 @property (nonatomic, copy) NSString *appKey;
+
 /// app 创建的 App Groups ID，必填
 @property (nonatomic, copy) NSString *applicationGroupIdentifier;
+
 /// 监听远程推送系统回调方法的代理类，必填
 /// 如在 AppDelegate 中调用 startWithConfig: 方法并监听推送回调，则传入 self
 @property (nonatomic, strong) id notificationCenterDelegate;
+
 /// SDK 运行环境，默认为线上环境，非必填
 @property (nonatomic, assign) EnvType envType;
+
 /// 指定输出日志类型，非必填
 @property (nonatomic, assign) LogLevel logLevelType;
+
 /// APP 首页视图控制器名称（XXXController），非必填，设置后，创建的基于启动弹窗将会在该首页展示；
 /// 若不设置，创建的基于启动弹窗将可能在 APP 出现的第一个页面上展示（如广告页）
 @property (nonatomic, copy) NSString *mainPage;
+
 /// 关闭注册远程推送，非必填，默认 NO
 /// 设置为 YES 后系统将不会注册远程推送消息，但调用 pushToken 接口依然能正常上报 deviceToken
 @property (nonatomic, assign) BOOL pushClosed;
+
 /// 配置 SDK 请求的 URL，非必填，默认为 EA 的 服务器 URL
 @property (nonatomic, copy) NSString *url;
 
