@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "AnalysysEaConfig.h"
+#import "AnalysysBannerConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,6 +46,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 开启/关闭设置页面别名
 /// @param state 为 YES 时开启页面别名设置功能，为 NO 关闭页面别名设置功能
 + (void)setPageTagState:(BOOL)state;
+
+#pragma mark - banner
+
+/// 渲染 banner
+/// @param bannerConfig 横幅配置，AnalysysBannerConfig 类对象实例
++ (CGSize)loadBanner:(AnalysysBannerConfig *)bannerConfig;
 
 @end
 
