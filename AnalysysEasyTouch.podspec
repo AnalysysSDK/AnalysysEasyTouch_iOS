@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS"
   spec.license      = { :type => "MIT", :file => "README.md" }
   spec.author       = { "analysys" => "analysys@analysys.com.cn" }
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS.git", :tag => spec.version }
   spec.vendored_frameworks = "AnalysysEasyTouch.framework"
   spec.requires_arc = true
