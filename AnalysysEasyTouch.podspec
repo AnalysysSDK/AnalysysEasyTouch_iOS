@@ -11,5 +11,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS.git", :tag => spec.version }
   spec.vendored_frameworks = "AnalysysEasyTouch.framework"
   spec.requires_arc = true
+  spec.xcconfig     = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64"}
 
 end
