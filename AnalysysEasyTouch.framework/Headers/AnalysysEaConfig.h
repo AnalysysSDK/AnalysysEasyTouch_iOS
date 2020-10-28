@@ -21,11 +21,12 @@ typedef NS_ENUM(NSUInteger, EnvType) {
 /// 日志类型输出
 typedef NS_ENUM(NSUInteger, LogLevel) {
     LogLevel_DEBUG,   // 输出 debug 日志
-    LogLevel_VERBOSE, // 输出全部日志
+    LogLevel_VERBOSE, // 输出全部可见日志
     LogLevel_NONE,    // 不输出日志
     LogLevel_INFO,    // 输出常规信息 [AnalysysEasyTouch][Log] 标记
     LogLevel_WARN,    // 输出警告信息 [AnalysysEasyTouch][Warn] 标记
     LogLevel_ERROR,   // 输出错误信息 [AnalysysEasyTouch][Error] 标记
+    LogLevel_Data,    // 输出所有信息，包含请求与响应数据
 };
 
 /// 处理推送消息的类型，推送触达或者点击了推送消息
