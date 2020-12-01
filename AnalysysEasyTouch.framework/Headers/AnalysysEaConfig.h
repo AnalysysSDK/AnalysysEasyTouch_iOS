@@ -29,6 +29,12 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
     LogLevel_Data,    // 输出所有信息，包含请求与响应数据
 };
 
+/// 推送通道
+typedef NS_ENUM(NSUInteger, PushProvider) {
+    PUSH_PROVIDER_APNS,  // APNS 原生通道
+    PUSH_PROVIDER_JPUSH, // 极光推送通道
+};
+
 /// 处理推送消息的类型，推送触达或者点击了推送消息
 typedef NS_ENUM(NSUInteger, PushEventType) {
     PUSH_RECEIVE, // 收到推送消息
@@ -64,12 +70,18 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 /// 若不设置，创建的基于启动弹窗将可能在 APP 出现的第一个页面上展示（如广告页）
 @property (nonatomic, copy) NSString *mainPage;
 
-/// 关闭注册远程推送，非必填，默认 NO
-/// 设置为 YES 后系统将不会注册远程推送消息，但调用 pushToken 接口依然能正常上报 deviceToken
+/// 关闭 EA 注册远程推送，非必填，默认 NO
+/// 设置为 YES 后 EA 系统将不会注册远程推送消息，但调用 pushToken 接口依然能正常上报 deviceToken
 @property (nonatomic, assign) BOOL pushClosed;
 
-/// 配置 SDK 请求的 URL，非必填，默认为 EA 的 服务器 URL
+/// 推送通道（APNS，极光），非必填
+@property (nonatomic, assign) PushProvider pushProvider;
+
+/// 配置 SDK 请求的 URL，非必填，默认为 EA 的服务器 URL
 @property (nonatomic, copy) NSString *url;
+
+/// 关闭 banner 信息流功能，非必填，默认 NO
+@property (nonatomic, assign) BOOL bannerClosed;
 
 @end
 

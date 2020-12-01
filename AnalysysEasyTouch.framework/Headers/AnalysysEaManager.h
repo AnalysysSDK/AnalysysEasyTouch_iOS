@@ -33,7 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 注册远程推送获取的 deviceToken
 /// @param deviceToken APNS 远程推送由系统返回的 NSData 类型的 deviceToken
 /// @param groupIdentifier App Groups Id
-+ (void)pushToken:(NSData *_Nullable)deviceToken groupIdentifier:(NSString *)groupIdentifier;
++ (void)pushToken:(NSData *_Nullable)deviceToken groupIdentifier:(NSString *)groupIdentifier __attribute__((deprecated("已过时！建议使用 pushToken:provider:groupIdentifier: 接口")));
+
+/// 上报唯一设备标识
+/// @param deviceId 设备唯一标识 ID（若是 APNS 通道，值为系统直接返回的 deviceToken，若是三方推送通道，比如极光推送，则值为获取的 registrationID）
+/// @param provider 推送通道
+/// @param groupIdentifier App Groups Id
++ (void)pushToken:(id _Nullable)deviceId provider:(PushProvider)provider groupIdentifier:(NSString *)groupIdentifier;
 
 /// 追踪推送消息
 /// @param type 推送消息事件类型，到达/点击
