@@ -1,11 +1,3 @@
-//
-//  AnalysysBannerConfig.h
-//  AnalysysEasyTouch
-//
-//  Created by 郭永青 on 2020/5/12.
-//  Copyright © 2020 Analysys Technology Co., Ltd. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

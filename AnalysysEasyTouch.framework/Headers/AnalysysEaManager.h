@@ -1,11 +1,3 @@
-//
-//  AnalysysEaManager.h
-//  EASDK
-//
-//  Created by 郭永青 on 2019/10/9.
-//  Copyright © 2019 Analysys Technology Co., Ltd. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "AnalysysEaConfig.h"
