@@ -1,16 +1,16 @@
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
 
-  spec.name         = "AnalysysEasyTouch"
-  spec.version      = "1.26.2"
-  spec.summary      = "方舟易达 SDK"
-  spec.description  = "⾃动化运营平台，通过EA产品帮助客户建⽴起与用户互动的各种桥梁，实现自动化、个性化的触达⽤户，进⽽促进用户增长。"
-  spec.homepage     = "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS"
-  spec.license      = { :type => "MIT", :file => "README.md" }
-  spec.author       = { "analysys" => "analysys@analysys.com.cn" }
-  spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS.git", :tag => spec.version }
-  spec.vendored_frameworks = "AnalysysEasyTouch.framework"
-  spec.requires_arc = true
-  spec.xcconfig     = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64"}
+  s.name         = "AnalysysEasyTouch"
+  s.version      = "1.29"
+  s.summary      = "方舟易达 SDK"
+  s.description  = "⾃动化运营平台，通过EA产品帮助客户建⽴起与用户互动的各种桥梁，实现自动化、个性化的触达⽤户，进⽽促进用户增长。"
+  s.homepage     = "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS"
+  s.license      = { :type => "MIT", :file => "README.md" }
+  s.author       = { "analysys" => "analysys@analysys.com.cn" }
+  s.platform     = :ios, "9.0"
+  s.source       = { :git => "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS.git", :tag => s.version }
+  s.vendored_frameworks = "AnalysysEasyTouch.framework"
+  s.requires_arc = true
+  s.xcconfig     = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64"}
 
 end

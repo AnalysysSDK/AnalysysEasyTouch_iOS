@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
 /// 推送通道
 typedef NS_ENUM(NSUInteger, PushProvider) {
     PUSH_PROVIDER_APNS,  // APNS 原生通道
-    PUSH_PROVIDER_JPUSH, // 极光推送通道
+    PUSH_PROVIDER_JPUSH, // 极光推送
 };
 
 /// 处理推送消息的类型，推送触达或者点击了推送消息
