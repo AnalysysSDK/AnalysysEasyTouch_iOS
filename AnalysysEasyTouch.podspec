@@ -47,12 +47,6 @@ Pod::Spec.new do |s|
     ss.dependency 'Core'
   end
   
-  # RN 支持模块
-  s.subspec 'RN' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaRNModule.framework'
-    ss.dependency 'React'
-  end
-  
   s.default_subspec = 'AnalysysEasyTouch'
 
 end
