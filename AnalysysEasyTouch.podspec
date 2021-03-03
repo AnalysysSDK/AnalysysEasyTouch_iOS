@@ -14,36 +14,37 @@ Pod::Spec.new do |s|
   
   # 全量模块
   s.subspec 'AnalysysEasyTouch' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEasyTouch.framework'
-    ss.resource = 'AnalysysEasyTouch/Resources/AnalysysEasyTouch.bundle'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEasyTouch.framework'
+    ss.resource = 'Resources/AnalysysEasyTouch.bundle'
   end
       
   # 通用模块
   s.subspec 'Core' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaCore.framework'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEaCore.framework'
+    ss.resource = 'Resources/AnalysysEasyTouch.bundle'
   end
   
   # push 模块
   s.subspec 'Push' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaPush.framework'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEaPush.framework'
     ss.dependency 'Core'
   end
   
   # 弹窗模块
   s.subspec 'PopWindow' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaPopWindow.framework'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEaPopWindow.framework'
     ss.dependency 'Core'
   end
   
   # banner 信息流模块
   s.subspec 'Banner' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaBanner.framework'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEaBanner.framework'
     ss.dependency 'Core'
   end
   
   # Tag 模块
   s.subspec 'Tag' do |ss|
-    ss.vendored_frameworks = 'AnalysysEasyTouch/Frameworks/AnalysysEaTag.framework'
+    ss.vendored_frameworks = 'AnalysysEasyTouch/AnalysysEaTag.framework'
     ss.dependency 'Core'
   end
   
