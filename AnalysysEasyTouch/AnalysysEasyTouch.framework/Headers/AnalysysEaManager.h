@@ -45,11 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param state 为 YES 时开启页面别名设置功能，为 NO 关闭页面别名设置功能
 + (void)setPageTagState:(BOOL)state;
 
-#pragma mark - banner
+#pragma mark - banner 信息流
 
 /// 渲染 banner
 /// @param bannerConfig 横幅配置，AnalysysBannerConfig 类对象实例
 + (CGSize)loadBanner:(AnalysysBannerConfig *)bannerConfig;
+
+/// 根据指定的 locationId 获取对应的服务端下发的 banner 活动信息 json，异步返回
+/// @param locationIds 指定的 locationId 数组
+/// @param completion 接口回调
++ (void)getBanner:(NSArray<NSString *> *)locationIds completion:(void (^)(NSString * _Nullable json))completion;
 
 @end
 
