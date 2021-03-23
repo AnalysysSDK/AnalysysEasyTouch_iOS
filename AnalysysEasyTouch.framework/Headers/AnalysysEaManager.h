@@ -51,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param bannerConfig 横幅配置，AnalysysBannerConfig 类对象实例
 + (CGSize)loadBanner:(AnalysysBannerConfig *)bannerConfig;
 
+/// 根据指定的 locationId 获取对应的服务端下发的 banner 活动信息 json，异步返回
+/// @param locationIds 指定的 locationId 数组
+/// @param completion 接口回调
++ (void)getBanner:(NSArray<NSString *> *)locationIds completion:(void (^)(NSString * _Nullable json))completion;
+
 @end
 
 NS_ASSUME_NONNULL_END
