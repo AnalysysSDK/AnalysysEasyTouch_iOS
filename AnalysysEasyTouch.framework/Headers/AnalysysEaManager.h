@@ -65,6 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param visible 为 YES 时弹窗设置功能，为 NO 关闭弹窗设置功能
 + (void)setDialogVisible:(BOOL)visible;
 
+///上传公众号的ID
++ (void)setWeChatId:(NSString *)unionId appId:(NSString *)appid openId:(NSString *)openId;
+
 @end
 
 NS_ASSUME_NONNULL_END
