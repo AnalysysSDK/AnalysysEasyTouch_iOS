@@ -75,6 +75,8 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 /// 关闭 banner 信息流功能，非必填，默认 NO
 @property (nonatomic, assign) BOOL bannerClosed;
 
+@property (nonatomic, copy) NSString *uploadUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END
