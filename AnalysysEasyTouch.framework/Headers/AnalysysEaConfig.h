@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
 typedef NS_ENUM(NSUInteger, PushProvider) {
     PUSH_PROVIDER_APNS,  // APNS 原生通道
     PUSH_PROVIDER_JPUSH, // 极光推送
+    PUSH_PROVIDER_GETUI, // 个推推送
+    PUSH_PROVIDER_TPNS, //TPNS推送
 };
 
 /// 处理推送消息的类型，推送触达或者点击了推送消息
@@ -44,7 +46,7 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 
 /// 初始化时传入的 appKey ，由创建项目时自动生成，必填
 @property (nonatomic, copy) NSString *appKey;
-
+@property (nonatomic, copy) NSString *ubaAppKey;
 /// app 创建的 App Groups ID，必填
 @property (nonatomic, copy) NSString *applicationGroupIdentifier;
 
