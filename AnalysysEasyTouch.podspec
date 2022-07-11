@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AnalysysEasyTouch"
-  s.version      = "2.3.1"
+  s.version      = "2.3.1.1"
   s.summary      = "方舟易达 SDK"
   s.description  = "⾃动化运营平台，通过EA产品帮助客户建⽴起与用户互动的各种桥梁，实现自动化、个性化的触达⽤户，进⽽促进用户增长。"
   s.homepage     = "https://github.com/AnalysysSDK/AnalysysEasyTouch_iOS"
