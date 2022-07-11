@@ -35,6 +35,30 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
     PUSH_CLICK    // 点击推送消息
 };
 
+
+
+extern NSString * const EAAnalysysReadyShowWindow;//活动弹窗即将展示通知
+extern NSString * const EAAnalysysShowWindowContentClicked;//弹窗活动内容被点击
+
+
+
+
+@protocol EASDKActiveDelegate <NSObject>
+
+@optional
+
+/// 弹窗即将弹出
+- (void)popWindowWillShow;
+///banner信息流即将展示
+- (void)bannerFlowWillShowWithLocation:(NSString *)locationID;
+
+///banner信息流被点击(仅针对匹配活动的信息流)
+- (void)bannerFlowDidClickWithLink:(NSString *)eventLink isH5:(BOOL )isH5 location:(NSString *)locationID;
+/// 弹窗图片区域被点击
+- (void)popWindowDidClickWithLink:(NSString *)eventLink isH5:(BOOL )isH5;
+
+@end
+
 /// SDK 初始化配置类
 @interface AnalysysEaConfig : NSObject
 
@@ -78,6 +102,13 @@ typedef NS_ENUM(NSUInteger, PushEventType) {
 @property (nonatomic, assign) BOOL bannerClosed;
 
 @property (nonatomic, copy) NSString *uploadUrl;
+
+
+
+/// 是否需要自动处理弹窗与信息流的点击事件,默认YES
+@property (nonatomic, assign) BOOL autoHandleClick;
+
+@property (nonatomic, weak,nullable) id <EASDKActiveDelegate>notificationWindowDelegate;
 
 @end
 

@@ -68,6 +68,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///上传公众号的ID
 + (void)setWeChatId:(NSString *)unionId appId:(NSString *)appid openId:(NSString *)openId;
 
+///判断当前是否有要处理的弹窗
++ (BOOL )showPopWindow;
+
 @end
 
 NS_ASSUME_NONNULL_END
